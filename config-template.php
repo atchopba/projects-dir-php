@@ -6,5 +6,5 @@ define("__pwd__", "xxxxxxxx");
 define("__db__", "xxxxxxxx");
 
 // fichier log
-define("__log_file__", "logs/notifier-log.log");
+define("__log_file__", "logs/request-log.log");
 ?>
