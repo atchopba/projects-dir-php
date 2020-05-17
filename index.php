@@ -41,31 +41,37 @@
 	    <!-- CORPS DE LA PAGE  -->
 	    <h3>Bienvenue sur le portail des projets</h3>
 	    
-	    <div class="row">Ajout d'un projet</div>
+	    
 
 	    <form method="POST" action="index.php" onsubmit="return validate_form_project();">
 
 	    	<?php include_once("treatment.inc.php"); ?>
 		    
+		    <?php if (isset($id) && $id != "") { ?>
+	    	<div class="row">Modification d'un projet</div>
 		    <div class="row">
-		    	<label>ID </label>
-		    	<input type="hidden" name="id_" id="id_" size="64" value="" autocomplete="false" />
+		    	<label>ID </label>&nbsp; &nbsp; <?php echo $id; ?>
+		    	<input type="hidden" name="id_" id="id_" size="64" value="<?php echo $id; ?>" autocomplete="false" />
 		    </div>
+			<?php } else { ?>
+				<div class="row">Ajout d'un projet</div>
+			<?php } ?>
+
 		    <div class="row">
 		    	<label>Titre : </label>
-		    	<input type="text" name="title" id="title" placeholder="Titre" size="64" value="" autocomplete="false" />
+		    	<input type="text" name="title" id="title" placeholder="Titre" size="64" value="<?php echo isset($title) ? $title : ""; ?>" autocomplete="false" />
 		    </div>
 		    <div class="row">
 		    	<label>Description : </label>
-		    	<textarea name="description" id="description" placeholder="Lorem ipsum Lorem ipsum" rows="15" cols="64" autocomplete="false"></textarea>
+		    	<textarea name="description" id="description" placeholder="Lorem ipsum Lorem ipsum" rows="15" cols="64" autocomplete="false"><?php echo isset($description) ? $description : ""; ?></textarea>
 		    </div>
 		    <div class="row">
 		    	<label>Date de début : </label>
-		    	<input type="text" name="start_date" id="start_date" placeholder="2020-05-17" size="64" autocomplete="false" />
+		    	<input type="text" name="start_date" id="start_date" placeholder="2020-05-17" size="64" value="<?php echo isset($start_date) ? $start_date : ""; ?>" autocomplete="false" />
 		    </div>
 		    <div class="row">
 		    	<label>Date d'&eacute;ch&eacute;ance : </label>
-		    	<input type="text" name="due_date" id="due_date" placeholder="2020-05-17" size="64" autocomplete="false">
+		    	<input type="text" name="due_date" id="due_date" placeholder="2020-05-17" size="64" value="<?php echo isset($due_date) ? $due_date : ""; ?>" autocomplete="false">
 		    </div>
 		    <div class="row">
 		    	<input type="submit" name="valid_project" id="valid_project" value="Valider" />

@@ -50,11 +50,17 @@ function execute_query($query) {
 
 /**
  * renvoie les projets
+ * @param $id_ 	
  * @return array
  */
-function get_projects() {
+function get_projects($id = null) {
 	$mysqli = new mysqli(__host__, __user__, __pwd__, __db__);
+	// 
 	$query = "SELECT * FROM projects";
+	// if you got an id
+	if ($id != null) {
+		$query .= " WHERE id = '". $id ."'";
+	}
 	/* check connection */
 	if (mysqli_connect_errno()) {
 	    printf("Connect failed: %s\n", mysqli_connect_error());

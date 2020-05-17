@@ -23,7 +23,7 @@ include_once("common.inc.php");
 			echo "<td>". $p["description"] ."</td>";
 			echo "<td>". $p["start_date"] ."</td>";
 			echo "<td>". $p["due_date"] ."</td>";
-			echo "<td><a href='#'>Modifier</a></td>";
+			echo "<td><a href='index.php?action=update&id=". $p["id"] ."'>Modifier</a></td>";
 			echo "<td><a href='javascript:;' onclick='confirm_delete(\"index.php?action=delete&id=". $p["id"] ."\")'>Supprimer</a></td>";
 			echo "</tr>";
 		}
