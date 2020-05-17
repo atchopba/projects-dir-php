@@ -18,7 +18,7 @@ include_once("common.inc.php");
 	<?php 
 		$arr_projects = get_projects();
 		if (sizeof($arr_projects) == 0) {
-			echo "<tr><td colspan='7'>Aucun projets !</td></tr>";
+			echo "<tr><td colspan='7'>Aucun projet !</td></tr>";
 		} else {
 			foreach ($arr_projects as $p) {
 				echo "<tr>";
