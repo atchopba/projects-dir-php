@@ -16,16 +16,21 @@ include_once("common.inc.php");
 	</thead>
 	<tbody>
 	<?php 
-		foreach (get_projects() as $p) {
-			echo "<tr>";
-			echo "<td>". $p["id"] ."</td>";
-			echo "<td>". $p["title"] ."</td>";
-			echo "<td>". $p["description"] ."</td>";
-			echo "<td>". $p["start_date"] ."</td>";
-			echo "<td>". $p["due_date"] ."</td>";
-			echo "<td><a href='index.php?action=update&id=". $p["id"] ."'>Modifier</a></td>";
-			echo "<td><a href='javascript:;' onclick='confirm_delete(\"index.php?action=delete&id=". $p["id"] ."\")'>Supprimer</a></td>";
-			echo "</tr>";
+		$arr_projects = get_projects();
+		if (sizeof($arr_projects) == 0) {
+			echo "<tr><td colspan='7'>Aucun projets !</td></tr>";
+		} else {
+			foreach ($arr_projects as $p) {
+				echo "<tr>";
+				echo "<td>". $p["id"] ."</td>";
+				echo "<td>". $p["title"] ."</td>";
+				echo "<td>". $p["description"] ."</td>";
+				echo "<td>". $p["start_date"] ."</td>";
+				echo "<td>". $p["due_date"] ."</td>";
+				echo "<td><a href='index.php?action=update&id=". $p["id"] ."'>Modifier</a></td>";
+				echo "<td><a href='javascript:;' onclick='confirm_delete(\"index.php?action=delete&id=". $p["id"] ."\")'>Supprimer</a></td>";
+				echo "</tr>";
+			}
 		}
 	?>
 	</tbody>
