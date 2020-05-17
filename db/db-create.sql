@@ -2,7 +2,8 @@ CREATE DATABASE project_dir;
 
 USE project_dir;
 
-DROP TABLE IF EXISTS projects (
+DROP TABLE IF EXISTS projects;
+CREATE TABLE projects (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	title VARCHAR(256) NOT NULL UNIQUE,
 	description TEXT,
