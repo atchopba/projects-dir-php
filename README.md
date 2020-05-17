@@ -22,3 +22,5 @@ Apache/PHP and MySQL servers.
 ### Installation
 
 * Put files on your PHP server.
+
+* Give 755 to logs folder.
