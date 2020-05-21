@@ -41,8 +41,6 @@
 	    <!-- CORPS DE LA PAGE  -->
 	    <h3>Bienvenue sur le portail des projets</h3>
 	    
-	    
-
 	    <form method="POST" action="index.php" onsubmit="return validate_form_project();">
 
 	    	<?php include_once("treatment.inc.php"); ?>
